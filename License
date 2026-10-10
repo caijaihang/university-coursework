@@ -1,0 +1,49 @@
+
+---
+
+### 📄 文件 2：`main.py`（Python 练习示例）
+
+```python
+"""
+main.py - Basic Python exercises and examples.
+
+This file contains small programs I wrote while learning Python.
+"""
+
+
+def greet(name: str) -> str:
+    """Return a friendly greeting."""
+    return f"Hello, {name}! Welcome to my learning project."
+
+
+def fibonacci(n: int) -> list:
+    """Return the first n Fibonacci numbers."""
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+
+
+def is_palindrome(text: str) -> bool:
+    """Check if a string is a palindrome (ignoring case and spaces)."""
+    cleaned = text.replace(" ", "").lower()
+    return cleaned == cleaned[::-1]
+
+
+def main():
+    # Example 1: Greeting
+    print(greet("World"))
+
+    # Example 2: Fibonacci sequence
+    print("Fibonacci:", fibonacci(10))
+
+    # Example 3: Palindrome check
+    words = ["racecar", "hello", "A man a plan a canal Panama"]
+    for word in words:
+        print(f"Is '{word}' a palindrome? {is_palindrome(word)}")
+
+
+if __name__ == "__main__":
+    main()
